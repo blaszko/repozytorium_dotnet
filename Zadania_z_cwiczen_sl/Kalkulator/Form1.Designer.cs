@@ -44,6 +44,7 @@
             this.b0 = new System.Windows.Forms.Button();
             this.bWynik = new System.Windows.Forms.Button();
             this.bPodziel = new System.Windows.Forms.Button();
+            this.bKasuj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbWynik
@@ -61,6 +62,7 @@
             this.b7.TabIndex = 1;
             this.b7.Text = "7";
             this.b7.UseVisualStyleBackColor = true;
+            this.b7.Click += new System.EventHandler(this.b7_Click);
             // 
             // b9
             // 
@@ -70,6 +72,7 @@
             this.b9.TabIndex = 2;
             this.b9.Text = "9";
             this.b9.UseVisualStyleBackColor = true;
+            this.b9.Click += new System.EventHandler(this.b9_Click);
             // 
             // b8
             // 
@@ -79,6 +82,7 @@
             this.b8.TabIndex = 3;
             this.b8.Text = "8";
             this.b8.UseVisualStyleBackColor = true;
+            this.b8.Click += new System.EventHandler(this.b8_Click);
             // 
             // b2
             // 
@@ -88,6 +92,7 @@
             this.b2.TabIndex = 6;
             this.b2.Text = "2";
             this.b2.UseVisualStyleBackColor = true;
+            this.b2.Click += new System.EventHandler(this.b2_Click);
             // 
             // b3
             // 
@@ -97,6 +102,7 @@
             this.b3.TabIndex = 5;
             this.b3.Text = "3";
             this.b3.UseVisualStyleBackColor = true;
+            this.b3.Click += new System.EventHandler(this.b3_Click);
             // 
             // b1
             // 
@@ -106,6 +112,7 @@
             this.b1.TabIndex = 4;
             this.b1.Text = "1";
             this.b1.UseVisualStyleBackColor = true;
+            this.b1.Click += new System.EventHandler(this.b1_Click);
             // 
             // b5
             // 
@@ -115,6 +122,7 @@
             this.b5.TabIndex = 9;
             this.b5.Text = "5";
             this.b5.UseVisualStyleBackColor = true;
+            this.b5.Click += new System.EventHandler(this.b5_Click);
             // 
             // b6
             // 
@@ -124,6 +132,7 @@
             this.b6.TabIndex = 8;
             this.b6.Text = "6";
             this.b6.UseVisualStyleBackColor = true;
+            this.b6.Click += new System.EventHandler(this.b6_Click);
             // 
             // b4
             // 
@@ -133,6 +142,7 @@
             this.b4.TabIndex = 7;
             this.b4.Text = "4";
             this.b4.UseVisualStyleBackColor = true;
+            this.b4.Click += new System.EventHandler(this.b4_Click);
             // 
             // bOdejmij
             // 
@@ -142,6 +152,7 @@
             this.bOdejmij.TabIndex = 12;
             this.bOdejmij.Text = "-";
             this.bOdejmij.UseVisualStyleBackColor = true;
+            this.bOdejmij.Click += new System.EventHandler(this.bOdejmij_Click);
             // 
             // bPomnoz
             // 
@@ -151,6 +162,7 @@
             this.bPomnoz.TabIndex = 11;
             this.bPomnoz.Text = "*";
             this.bPomnoz.UseVisualStyleBackColor = true;
+            this.bPomnoz.Click += new System.EventHandler(this.bPomnoz_Click);
             // 
             // bDodaj
             // 
@@ -160,6 +172,7 @@
             this.bDodaj.TabIndex = 10;
             this.bDodaj.Text = "+";
             this.bDodaj.UseVisualStyleBackColor = true;
+            this.bDodaj.Click += new System.EventHandler(this.bDodaj_Click);
             // 
             // b0
             // 
@@ -169,15 +182,17 @@
             this.b0.TabIndex = 13;
             this.b0.Text = "0";
             this.b0.UseVisualStyleBackColor = true;
+            this.b0.Click += new System.EventHandler(this.b0_Click);
             // 
             // bWynik
             // 
-            this.bWynik.Location = new System.Drawing.Point(55, 194);
+            this.bWynik.Location = new System.Drawing.Point(98, 194);
             this.bWynik.Name = "bWynik";
-            this.bWynik.Size = new System.Drawing.Size(80, 41);
+            this.bWynik.Size = new System.Drawing.Size(37, 41);
             this.bWynik.TabIndex = 14;
             this.bWynik.Text = "=";
             this.bWynik.UseVisualStyleBackColor = true;
+            this.bWynik.Click += new System.EventHandler(this.bWynik_Click);
             // 
             // bPodziel
             // 
@@ -187,12 +202,25 @@
             this.bPodziel.TabIndex = 15;
             this.bPodziel.Text = "/";
             this.bPodziel.UseVisualStyleBackColor = true;
+            this.bPodziel.Click += new System.EventHandler(this.bPodziel_Click);
+            // 
+            // bKasuj
+            // 
+            this.bKasuj.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.bKasuj.Location = new System.Drawing.Point(55, 194);
+            this.bKasuj.Name = "bKasuj";
+            this.bKasuj.Size = new System.Drawing.Size(37, 41);
+            this.bKasuj.TabIndex = 16;
+            this.bKasuj.Text = "C";
+            this.bKasuj.UseVisualStyleBackColor = true;
+            this.bKasuj.Click += new System.EventHandler(this.bKasuj_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(199, 250);
+            this.Controls.Add(this.bKasuj);
             this.Controls.Add(this.bPodziel);
             this.Controls.Add(this.bWynik);
             this.Controls.Add(this.b0);
@@ -237,6 +265,7 @@
         private System.Windows.Forms.Button b0;
         private System.Windows.Forms.Button bWynik;
         private System.Windows.Forms.Button bPodziel;
+        private System.Windows.Forms.Button bKasuj;
     }
 }
 
