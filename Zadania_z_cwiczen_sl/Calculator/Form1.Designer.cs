@@ -70,6 +70,7 @@
             this.b7.TabIndex = 1;
             this.b7.Text = "7";
             this.b7.UseVisualStyleBackColor = false;
+            this.b7.Click += new System.EventHandler(this.button_click);
             // 
             // bDivide
             // 
@@ -92,6 +93,7 @@
             this.b9.TabIndex = 3;
             this.b9.Text = "9";
             this.b9.UseVisualStyleBackColor = false;
+            this.b9.Click += new System.EventHandler(this.button_click);
             // 
             // b8
             // 
@@ -103,6 +105,7 @@
             this.b8.TabIndex = 4;
             this.b8.Text = "8";
             this.b8.UseVisualStyleBackColor = false;
+            this.b8.Click += new System.EventHandler(this.button_click);
             // 
             // b2
             // 
@@ -114,6 +117,7 @@
             this.b2.TabIndex = 8;
             this.b2.Text = "2";
             this.b2.UseVisualStyleBackColor = false;
+            this.b2.Click += new System.EventHandler(this.button_click);
             // 
             // b3
             // 
@@ -125,6 +129,7 @@
             this.b3.TabIndex = 7;
             this.b3.Text = "3";
             this.b3.UseVisualStyleBackColor = false;
+            this.b3.Click += new System.EventHandler(this.button_click);
             // 
             // bMinus
             // 
@@ -160,6 +165,7 @@
             this.b5.TabIndex = 12;
             this.b5.Text = "5";
             this.b5.UseVisualStyleBackColor = false;
+            this.b5.Click += new System.EventHandler(this.button_click);
             // 
             // b6
             // 
@@ -171,6 +177,7 @@
             this.b6.TabIndex = 11;
             this.b6.Text = "6";
             this.b6.UseVisualStyleBackColor = false;
+            this.b6.Click += new System.EventHandler(this.button_click);
             // 
             // bMultiply
             // 
@@ -193,6 +200,7 @@
             this.b4.TabIndex = 9;
             this.b4.Text = "4";
             this.b4.UseVisualStyleBackColor = false;
+            this.b4.Click += new System.EventHandler(this.button_click);
             // 
             // bDot
             // 
@@ -204,6 +212,7 @@
             this.bDot.TabIndex = 15;
             this.bDot.Text = ".";
             this.bDot.UseVisualStyleBackColor = false;
+            this.bDot.Click += new System.EventHandler(this.button_click);
             // 
             // bPlus
             // 
@@ -226,6 +235,7 @@
             this.b0.TabIndex = 13;
             this.b0.Text = "0";
             this.b0.UseVisualStyleBackColor = false;
+            this.b0.Click += new System.EventHandler(this.button_click);
             // 
             // bC
             // 
