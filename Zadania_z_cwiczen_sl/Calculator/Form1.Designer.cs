@@ -47,7 +47,7 @@
             this.bC = new System.Windows.Forms.Button();
             this.bEqual = new System.Windows.Forms.Button();
             this.bCe = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelCurrentOperation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbResult
@@ -82,6 +82,7 @@
             this.bDivide.TabIndex = 2;
             this.bDivide.Text = "/";
             this.bDivide.UseVisualStyleBackColor = false;
+            this.bDivide.Click += new System.EventHandler(this.operator_click_event);
             // 
             // b9
             // 
@@ -141,7 +142,7 @@
             this.bMinus.TabIndex = 6;
             this.bMinus.Text = "-";
             this.bMinus.UseVisualStyleBackColor = false;
-            this.bMinus.Click += new System.EventHandler(this.button_click);
+            this.bMinus.Click += new System.EventHandler(this.operator_click_event);
             // 
             // b1
             // 
@@ -189,6 +190,7 @@
             this.bMultiply.TabIndex = 10;
             this.bMultiply.Text = "*";
             this.bMultiply.UseVisualStyleBackColor = false;
+            this.bMultiply.Click += new System.EventHandler(this.operator_click_event);
             // 
             // b4
             // 
@@ -224,6 +226,7 @@
             this.bPlus.TabIndex = 14;
             this.bPlus.Text = "+";
             this.bPlus.UseVisualStyleBackColor = false;
+            this.bPlus.Click += new System.EventHandler(this.operator_click_event);
             // 
             // b0
             // 
@@ -247,6 +250,7 @@
             this.bC.TabIndex = 19;
             this.bC.Text = "C";
             this.bC.UseVisualStyleBackColor = false;
+            this.bC.Click += new System.EventHandler(this.bC_Click);
             // 
             // bEqual
             // 
@@ -258,6 +262,7 @@
             this.bEqual.TabIndex = 18;
             this.bEqual.Text = "=";
             this.bEqual.UseVisualStyleBackColor = false;
+            this.bEqual.Click += new System.EventHandler(this.bEqual_Click);
             // 
             // bCe
             // 
@@ -269,24 +274,25 @@
             this.bCe.TabIndex = 17;
             this.bCe.Text = "CE";
             this.bCe.UseVisualStyleBackColor = false;
+            this.bCe.Click += new System.EventHandler(this.bCe_Click);
             // 
-            // label1
+            // labelCurrentOperation
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 20);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "label1";
+            this.labelCurrentOperation.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelCurrentOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentOperation.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelCurrentOperation.Location = new System.Drawing.Point(14, 18);
+            this.labelCurrentOperation.Name = "labelCurrentOperation";
+            this.labelCurrentOperation.Size = new System.Drawing.Size(235, 20);
+            this.labelCurrentOperation.TabIndex = 20;
+            this.labelCurrentOperation.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 272);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelCurrentOperation);
             this.Controls.Add(this.bC);
             this.Controls.Add(this.bEqual);
             this.Controls.Add(this.bCe);
@@ -336,7 +342,7 @@
         private System.Windows.Forms.Button bC;
         private System.Windows.Forms.Button bEqual;
         private System.Windows.Forms.Button bCe;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCurrentOperation;
     }
 }
 
