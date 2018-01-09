@@ -315,7 +315,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Kalkulator Blazej Pospiech";
             this.ResumeLayout(false);
             this.PerformLayout();
 
