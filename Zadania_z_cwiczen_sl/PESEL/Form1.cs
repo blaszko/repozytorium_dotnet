@@ -57,9 +57,25 @@ namespace PESEL
                 return false;
         }
 
-        public bool sprawdzLiczbeKontrolna(int pesel)
+        public void sprawdzLiczbeKontrolna(string pesel)
         {
-            return true;
+            string informacja;
+            char[] cyfry = pesel.ToCharArray();
+            int cyfra1, cyfra2, cyfra3, cyfra4, cyfra5, cyfra6, cyfra7, cyfra8, cyfra9, cyfra10, cyfra11;
+
+            cyfra1 = (int)Char.GetNumericValue(cyfry[0]);
+            cyfra2 = (int)Char.GetNumericValue(cyfry[1]);
+            cyfra3 = (int)Char.GetNumericValue(cyfry[2]);
+            cyfra4 = (int)Char.GetNumericValue(cyfry[3]);
+            cyfra5 = (int)Char.GetNumericValue(cyfry[4]);
+            cyfra6 = (int)Char.GetNumericValue(cyfry[5]);
+            cyfra7 = (int)Char.GetNumericValue(cyfry[6]);
+            cyfra8 = (int)Char.GetNumericValue(cyfry[7]);
+            cyfra9 = (int)Char.GetNumericValue(cyfry[8]);
+            cyfra10 = (int)Char.GetNumericValue(cyfry[9]);
+            cyfra11 = (int)Char.GetNumericValue(cyfry[10]);
+
+            tbSprawdzPesel.Text = Convert.ToString(cyfra);
         }
 
         public void wpiszDateUrodzenia(string pesel)
@@ -109,6 +125,7 @@ namespace PESEL
                 else
                     tbPlec.Text = "Mężczyzna";
                 wpiszDateUrodzenia(pesel);
+                sprawdzLiczbeKontrolna(pesel);
             }
             else
             {
