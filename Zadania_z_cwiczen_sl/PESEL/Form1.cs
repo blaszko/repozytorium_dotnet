@@ -56,7 +56,45 @@ namespace PESEL
             else
                 return false;
         }
-        
+
+        public bool sprawdzLiczbeKontrolna(int pesel)
+        {
+            return true;
+        }
+
+        public void wpiszDateUrodzenia(string pesel)
+        {
+            string dzien, miesiac, rok, data, zmienna;
+
+            dzien = pesel.Substring(4, 2);
+            miesiac = pesel.Substring(2, 2);
+            rok = pesel.Substring(0, 2);
+            zmienna = pesel.Substring(2, 1);
+            switch (zmienna)
+            {
+                case "8":
+                    zmienna = "18";
+                    break;
+                case "2":
+                    zmienna = "20";
+                    break;
+                case "4":
+                    zmienna = "21";
+                    break;
+                case "6":
+                    zmienna = "22";
+                    break;
+                default:
+                    zmienna = "19";
+                    break;
+            }
+            data = dzien + "/" + miesiac + "/" + zmienna + rok;
+
+            tbDataUrodzenia.Text = data;
+
+        }
+
+
         private void bSprawdzPesel_Click(object sender, EventArgs e)
         {
             pesel = tbPesel.Text;
@@ -70,6 +108,7 @@ namespace PESEL
                     tbPlec.Text = "Kobieta";
                 else
                     tbPlec.Text = "Mężczyzna";
+                wpiszDateUrodzenia(pesel);
             }
             else
             {
