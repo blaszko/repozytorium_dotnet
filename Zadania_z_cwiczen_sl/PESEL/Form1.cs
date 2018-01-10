@@ -32,35 +32,49 @@ namespace PESEL
             tbSprawdzPesel.Text = "";
         }
 
-        private void bSprawdzPesel_Click(object sender, EventArgs e)
+        public bool sprawdzDlugosc(string pesel)
         {
-            int dlugoscPesel;
+            int dlugosc;
+            dlugosc = pesel.Count();
+            if ((dlugosc == 11) && !(pesel.Contains("+")) && !(pesel.Contains("-")))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool sprawdzCzyLiczba(string pesel)
+        {
             bool czyNumer;
 
-
+            czyNumer = Regex.IsMatch(pesel, @"^\d+$");
+            if (czyNumer)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        private void bSprawdzPesel_Click(object sender, EventArgs e)
+        {
             pesel = tbPesel.Text;
 
-            dlugoscPesel = pesel.Count();
-
-            if ((dlugoscPesel != 11) || pesel.Contains("+") || pesel.Contains("-"))
+            if ((sprawdzCzyLiczba(pesel) && (sprawdzDlugosc(pesel))))
             {
-                bWyczyscFormularz.PerformClick();
+                int liczbaPlec;
+                liczbaPlec = int.Parse(pesel.Substring(6, 3));
+
+                if (liczbaPlec % 2 == 0)
+                    tbPlec.Text = "Kobieta";
+                else
+                    tbPlec.Text = "Mężczyzna";
             }
-
-            czyNumer = Regex.IsMatch(pesel, @"^\d+$");
-            if (!czyNumer)
-            {
-                bWyczyscFormularz.PerformClick();
-            }
-
-            int liczbaPlec;
-            liczbaPlec = int.Parse(pesel.Substring(6, 3));
-
-            if (liczbaPlec % 2 == 0)
-                tbPlec.Text = "Kobieta";
             else
-                tbPlec.Text = "Mężczyzna";
-
+            {
+                bWyczyscFormularz.PerformClick();
+            }
         }
     }
 }
