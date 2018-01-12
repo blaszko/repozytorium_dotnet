@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace PESEL
 {
-    public partial class Form1 : Form
+    public partial class PeselWalidator : Form
     {
         string pesel;
+        protected int[] wagi = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
 
-        public Form1()
+        public PeselWalidator()
         {
             InitializeComponent();
         }
@@ -57,21 +58,26 @@ namespace PESEL
         {
             char[] cyfry = pesel.ToCharArray();
             int cyfraKontrolna;
-            int[] intAry = new int[11];
-            for (int i = 0; i < pesel.Length; i++)
+            int[] intAry = new int[pesel.Length];
+            if (sprawdzCzyLiczba(pesel) && sprawdzDlugosc(pesel))
             {
-                intAry[i] = (int)Char.GetNumericValue(pesel[i]);
-            }
-            cyfraKontrolna = (10 - ((intAry[0] * 1 + intAry[1] * 3 + intAry[2] * 7 + intAry[3] * 9 + intAry[4] * 1 + intAry[5] * 3 + intAry[6] * 7 + intAry[7] * 9 + intAry[8] * 1 + intAry[9] * 3) % 10)) % 10;
+                for (int i = 0; i < pesel.Length; i++)
+                {
+                    intAry[i] = (int)Char.GetNumericValue(pesel[i]);
+                }
+                cyfraKontrolna = (10 - ((intAry[0] * wagi[0] + intAry[1] * wagi[1] + intAry[2] * wagi[2] + intAry[3] * wagi[3] + intAry[4] * wagi[0] + intAry[5] * wagi[1] + intAry[6] * wagi[2] + intAry[7] * wagi[3] + intAry[8] * wagi[0] + intAry[9] * wagi[1]) % 10)) % 10;
 
-            if (cyfraKontrolna == intAry[10])
-            {
-                tbSprawdzPesel.Text = "Pesel prawidlowy";
-                return true;
+                if (cyfraKontrolna == intAry[pesel.Length - 1])
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
-                tbSprawdzPesel.Text = "Pesel nieprawidlowy";
                 return false;
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace PESEL
 {
-    partial class Form1
+    partial class PeselWalidator
     {
         /// <summary>
         /// Required designer variable.
@@ -42,15 +42,15 @@
             // 
             // tbPesel
             // 
-            this.tbPesel.Location = new System.Drawing.Point(17, 24);
+            this.tbPesel.Location = new System.Drawing.Point(18, 33);
             this.tbPesel.Name = "tbPesel";
-            this.tbPesel.Size = new System.Drawing.Size(155, 20);
+            this.tbPesel.Size = new System.Drawing.Size(232, 20);
             this.tbPesel.TabIndex = 0;
             // 
             // labelPodajNrPesel
             // 
             this.labelPodajNrPesel.AutoSize = true;
-            this.labelPodajNrPesel.Location = new System.Drawing.Point(14, 8);
+            this.labelPodajNrPesel.Location = new System.Drawing.Point(15, 17);
             this.labelPodajNrPesel.Name = "labelPodajNrPesel";
             this.labelPodajNrPesel.Size = new System.Drawing.Size(75, 13);
             this.labelPodajNrPesel.TabIndex = 1;
@@ -59,7 +59,7 @@
             // labelDataUrodzenia
             // 
             this.labelDataUrodzenia.AutoSize = true;
-            this.labelDataUrodzenia.Location = new System.Drawing.Point(14, 124);
+            this.labelDataUrodzenia.Location = new System.Drawing.Point(9, 133);
             this.labelDataUrodzenia.Name = "labelDataUrodzenia";
             this.labelDataUrodzenia.Size = new System.Drawing.Size(79, 13);
             this.labelDataUrodzenia.TabIndex = 2;
@@ -68,7 +68,7 @@
             // labelPlec
             // 
             this.labelPlec.AutoSize = true;
-            this.labelPlec.Location = new System.Drawing.Point(14, 176);
+            this.labelPlec.Location = new System.Drawing.Point(9, 185);
             this.labelPlec.Name = "labelPlec";
             this.labelPlec.Size = new System.Drawing.Size(28, 13);
             this.labelPlec.TabIndex = 3;
@@ -77,7 +77,7 @@
             // labelSprwadzPesel
             // 
             this.labelSprwadzPesel.AutoSize = true;
-            this.labelSprwadzPesel.Location = new System.Drawing.Point(14, 225);
+            this.labelSprwadzPesel.Location = new System.Drawing.Point(9, 234);
             this.labelSprwadzPesel.Name = "labelSprwadzPesel";
             this.labelSprwadzPesel.Size = new System.Drawing.Size(120, 13);
             this.labelSprwadzPesel.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             // bSprawdzPesel
             // 
-            this.bSprawdzPesel.Location = new System.Drawing.Point(23, 76);
+            this.bSprawdzPesel.Location = new System.Drawing.Point(18, 85);
             this.bSprawdzPesel.Name = "bSprawdzPesel";
             this.bSprawdzPesel.Size = new System.Drawing.Size(111, 23);
             this.bSprawdzPesel.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             // bWyczyscFormularz
             // 
-            this.bWyczyscFormularz.Location = new System.Drawing.Point(147, 76);
+            this.bWyczyscFormularz.Location = new System.Drawing.Point(142, 85);
             this.bWyczyscFormularz.Name = "bWyczyscFormularz";
             this.bWyczyscFormularz.Size = new System.Drawing.Size(108, 23);
             this.bWyczyscFormularz.TabIndex = 6;
@@ -105,30 +105,30 @@
             // 
             // tbDataUrodzenia
             // 
-            this.tbDataUrodzenia.Location = new System.Drawing.Point(17, 140);
+            this.tbDataUrodzenia.Location = new System.Drawing.Point(12, 149);
             this.tbDataUrodzenia.Name = "tbDataUrodzenia";
             this.tbDataUrodzenia.Size = new System.Drawing.Size(155, 20);
             this.tbDataUrodzenia.TabIndex = 7;
             // 
             // tbPlec
             // 
-            this.tbPlec.Location = new System.Drawing.Point(17, 192);
+            this.tbPlec.Location = new System.Drawing.Point(12, 201);
             this.tbPlec.Name = "tbPlec";
             this.tbPlec.Size = new System.Drawing.Size(155, 20);
             this.tbPlec.TabIndex = 8;
             // 
             // tbSprawdzPesel
             // 
-            this.tbSprawdzPesel.Location = new System.Drawing.Point(17, 241);
+            this.tbSprawdzPesel.Location = new System.Drawing.Point(12, 250);
             this.tbSprawdzPesel.Name = "tbSprawdzPesel";
             this.tbSprawdzPesel.Size = new System.Drawing.Size(155, 20);
             this.tbSprawdzPesel.TabIndex = 9;
             // 
-            // Form1
+            // PeselWalidator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 298);
+            this.ClientSize = new System.Drawing.Size(270, 298);
             this.Controls.Add(this.tbSprawdzPesel);
             this.Controls.Add(this.tbPlec);
             this.Controls.Add(this.tbDataUrodzenia);
@@ -142,7 +142,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "PeselWalidator";
             this.Text = "Pesel Walidator";
             this.ResumeLayout(false);
             this.PerformLayout();
