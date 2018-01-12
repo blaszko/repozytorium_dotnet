@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace PESEL
 {
-
     public partial class Form1 : Form
     {
         string pesel;
@@ -129,8 +128,6 @@ namespace PESEL
             {
                 return "Pesel nieprawidlowy";
             }
-
-            //tbDataUrodzenia.Text = data;
         }
 
         public string wpiszPlec(string pesel)
@@ -180,4 +177,3 @@ namespace PESEL
         }
     }
 }
-
