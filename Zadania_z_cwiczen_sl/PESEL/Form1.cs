@@ -77,57 +77,107 @@ namespace PESEL
             }
         }
 
-        public void wpiszDateUrodzenia(string pesel)
+        public bool sprawdzPoprawnoscNumeruPesel(string pesel)
+        {
+            bool dlugosc = sprawdzDlugosc(pesel);
+            bool dopuszczalneZnaki = sprawdzCzyLiczba(pesel);
+            bool liczbaKontrolna = sprawdzLiczbeKontrolna(pesel);
+
+            if (dlugosc && dopuszczalneZnaki && liczbaKontrolna)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public string wpiszDateUrodzenia(string pesel)
         {
             string dzien, miesiac, rok, data, zmienna;
 
-            dzien = pesel.Substring(4, 2);
-            miesiac = pesel.Substring(2, 2);
-            rok = pesel.Substring(0, 2);
-            zmienna = pesel.Substring(2, 1);
-            switch (zmienna)
+            if (sprawdzPoprawnoscNumeruPesel(pesel))
             {
-                case "8":
-                    zmienna = "18";
-                    break;
-                case "2":
-                    zmienna = "20";
-                    break;
-                case "4":
-                    zmienna = "21";
-                    break;
-                case "6":
-                    zmienna = "22";
-                    break;
-                default:
-                    zmienna = "19";
-                    break;
-            }
-            data = dzien + "/" + miesiac + "/" + zmienna + rok;
+                dzien = pesel.Substring(4, 2);
+                miesiac = pesel.Substring(2, 2);
+                rok = pesel.Substring(0, 2);
+                zmienna = pesel.Substring(2, 1);
+                switch (zmienna)
+                {
+                    case "8":
+                        zmienna = "18";
+                        break;
+                    case "2":
+                        zmienna = "20";
+                        break;
+                    case "4":
+                        zmienna = "21";
+                        break;
+                    case "6":
+                        zmienna = "22";
+                        break;
+                    default:
+                        zmienna = "19";
+                        break;
+                }
+                data = dzien + "/" + miesiac + "/" + zmienna + rok;
 
-            tbDataUrodzenia.Text = data;
+                return data;
+            }
+            else
+            {
+                return "Pesel nieprawidlowy";
+            }
+
+            //tbDataUrodzenia.Text = data;
         }
-        
+
+        public string wpiszPlec(string pesel)
+        {
+            string plec;
+            int liczbaPlec;
+
+            if (sprawdzPoprawnoscNumeruPesel(pesel))
+            {
+                liczbaPlec = int.Parse(pesel.Substring(6, 3));
+
+                if (liczbaPlec % 2 == 0)
+                    plec = "Kobieta";
+                else
+                    plec = "Mężczyzna";
+
+                return plec;
+            }
+            else
+            {
+                return "Pesel nieprawidlowy";
+            }
+        }
+        public string wpiszCzyPoprawnyPesel(string pesel)
+        {
+            string komunikat;
+
+            if (sprawdzPoprawnoscNumeruPesel(pesel))
+            {
+                komunikat = "Pesel prawidlowy";
+                return komunikat;
+            }
+            else
+            {
+                komunikat = "Pesel nieprawidlowy";
+                return komunikat;
+            }
+        }
+
         private void bSprawdzPesel_Click(object sender, EventArgs e)
         {
             pesel = tbPesel.Text;
 
-            if ((sprawdzCzyLiczba(pesel) && (sprawdzDlugosc(pesel))))
-            {
-                int liczbaPlec;
-                liczbaPlec = int.Parse(pesel.Substring(6, 3));
-
-                if (liczbaPlec % 2 == 0)
-                    tbPlec.Text = "Kobieta";
-                else
-                    tbPlec.Text = "Mężczyzna";
-                wpiszDateUrodzenia(pesel);
-                sprawdzLiczbeKontrolna(pesel);
-            }
-            else
-            {
-                tbSprawdzPesel.Text = "Pesel nieprawidlowy";
-            }
+            tbPlec.Text = wpiszPlec(pesel);
+            tbDataUrodzenia.Text = wpiszDateUrodzenia(pesel);//
+            tbSprawdzPesel.Text = wpiszCzyPoprawnyPesel(pesel);
         }
     }
 }
+
