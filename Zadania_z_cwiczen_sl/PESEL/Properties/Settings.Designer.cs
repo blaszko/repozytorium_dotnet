@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PESEL.Properties
+namespace PeselWalidator.Properties
 {
 
 

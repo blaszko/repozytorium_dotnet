@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PESEL
+namespace PeselWalidator
 {
     public partial class PeselWalidator : Form
     {
@@ -65,7 +65,7 @@ namespace PESEL
                 {
                     intAry[i] = (int)Char.GetNumericValue(pesel[i]);
                 }
-                cyfraKontrolna = (10 - ((intAry[0] * wagi[0] + intAry[1] * wagi[1] + intAry[2] * wagi[2] + intAry[3] * wagi[3] + intAry[4] * wagi[0] + intAry[5] * wagi[1] + intAry[6] * wagi[2] + intAry[7] * wagi[3] + intAry[8] * wagi[0] + intAry[9] * wagi[1]) % 10)) % 10;
+                cyfraKontrolna = (10 - ((intAry[0] * wagi[0] + intAry[1] * wagi[1] + intAry[2] * wagi[2] + intAry[3] * wagi[3] + intAry[4] * wagi[4] + intAry[5] * wagi[5] + intAry[6] * wagi[6] + intAry[7] * wagi[7] + intAry[8] * wagi[8] + intAry[9] * wagi[9]) % 10)) % 10;
 
                 if (cyfraKontrolna == intAry[pesel.Length - 1])
                 {
@@ -143,7 +143,7 @@ namespace PESEL
 
             if (sprawdzPoprawnoscNumeruPesel(pesel))
             {
-                liczbaPlec = int.Parse(pesel.Substring(6, 3));
+                liczbaPlec = int.Parse(pesel.Substring(9, 1));
 
                 if (liczbaPlec % 2 == 0)
                     plec = "Kobieta";

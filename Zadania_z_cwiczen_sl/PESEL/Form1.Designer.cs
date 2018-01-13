@@ -1,4 +1,4 @@
-﻿namespace PESEL
+﻿namespace PeselWalidator
 {
     partial class PeselWalidator
     {

@@ -297,3 +297,4 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+/Zadania_z_cwiczen_sl/PeselWalidator.Tests
